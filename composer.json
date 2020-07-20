@@ -22,6 +22,7 @@
         "microsoft/windowsazure": "<0.4.3"
     },
     "require-dev": {
+        "async-aws/simple-s3": "^0.1.1",
         "aws/aws-sdk-php": "^2.4.12||~3",
         "amazonwebservices/aws-sdk-for-php": "1.5.*",
         "rackspace/php-opencloud"  : "^1.9.2",

@@ -134,7 +134,7 @@ class AsyncAwsS3 implements Adapter, MetadataSupporter, ListKeysAware, SizeCalcu
         }
 
         try {
-            $this->service->upload($this->bucket, $this->computePath($key), $content, $options);
+            $this->service->putObject(['Body' => $content, 'Bucket' => $this->bucket, 'Key' => $this->computePath($key)]);
 
             if (is_resource($content)) {
                 return Util\Size::fromResource($content);

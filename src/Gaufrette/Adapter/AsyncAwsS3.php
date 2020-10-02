@@ -142,6 +142,8 @@ class AsyncAwsS3 implements Adapter, MetadataSupporter, ListKeysAware, SizeCalcu
 
             return Util\Size::fromContent($content);
         } catch (\Exception $e) {
+            file_put_contents('php://stderr', 'Failed to write: ' . $e->getMessage().PHP_EOL, FILE_APPEND);
+
             return false;
         }
     }
